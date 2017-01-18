@@ -77,3 +77,48 @@ var app = React.createElement(
 
 注意:
 JSX 表达式总是会当作 ReactElement 执行。具体的实际细节可能不同。一种优化 的模式是把 ReactElement 当作一个行内的对象字面量形式来绕过 React.createElement 里的校验代码。
+
+####4.JavaScript 表达式
+
+1.属性表达式
+
+要使用 JavaScript 表达式作为属性值，只需把这个表达式用一对大括号 ({}) 包起来，不要用引号 ("")。
+```js
+// 输入 (JSX):
+var person = <Person name={window.isLoggedIn ? window.name : ''} />;
+// 输出 (JS):
+var person = React.createElement(
+  Person,
+  {name: window.isLoggedIn ? window.name : ''}
+);
+```
+
+2.子节点表达式 
+
+同样地，JavaScript 表达式可用于描述子结点：
+```js
+// 输入 (JSX):
+var content = <Container>{window.isLoggedIn ? <Nav /> : <Login />}</Container>;
+// 输出 (JS):
+var content = React.createElement(
+  Container,
+  null,
+  window.isLoggedIn ? React.createElement(Nav) : React.createElement(Login)
+);
+```
+3.注释 
+
+JSX 里添加注释很容易；它们只是 JS 表达式而已。你只需要在一个标签的子节点内(非最外层)小心地用 {} 包围要注释的部分。
+```js
+var content = (
+  <Nav>
+    {/* 一般注释, 用 {} 包围 */}
+    <Person
+      /* 多
+         行
+         注释 */
+      name={window.isLoggedIn ? window.name : ''} // 行尾注释
+    />
+  </Nav>
+);
+```
