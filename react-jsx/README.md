@@ -161,5 +161,57 @@ console.log(component.props.foo); // 'override'
 
 这个 ... 操作符（也被叫做延展操作符 － spread operator）已经被 ES6 数组 支持。相关的还有 ES7 规范草案中的 Object 剩余和延展属性（Rest and Spread Properties）。我们利用了这些还在制定中标准中已经被支持的特性来使 JSX 拥有更优雅的语法。
 
+###四、JSX 的陷阱
 
+JSX 与 HTML 非常相似，但是有些关键区别要注意。
 
+####1.HTML 实体
+
+HTML 实体可以插入到 JSX 的文本中。
+```js
+<div>First &middot; Second</div>
+```
+
+如果想在 JSX 表达式中显示 HTML 实体，可以会遇到二次转义的问题，因为 React 默认会转义所有字符串，为了防止各种 XSS 攻击。
+```js
+// 错误: 会显示 “First &middot; Second”
+<div>{'First &middot; Second'}</div>
+```
+
+有多种绕过的方法。最简单的是直接用 Unicode 字符。这时要确保文件是 UTF-8 编码且网页也指定为 UTF-8 编码。
+```js
+<div>{'First · Second'}</div>
+```
+
+安全的做法是先找到 实体的 Unicode 编号 ，然后在 JavaScript 字符串里使用。
+```js
+<div>{'First \u00b7 Second'}</div>
+<div>{'First ' + String.fromCharCode(183) + ' Second'}</div>
+```
+
+可以在数组里混合使用字符串和 JSX 元素。
+```js
+<div>{['First ', <span>&middot;</span>, ' Second']}</div>
+```
+
+万不得已，可以直接使用原始 HTML。
+```js
+<div dangerouslySetInnerHTML={{__html: 'First &middot; Second'}} />
+```
+####2.自定义 HTML 属性
+
+如果往原生 HTML 元素里传入 HTML 规范里不存在的属性，React 不会显示它们。如果需要使用自定义属性，要加 data- 前缀。
+```js
+<div data-custom-attribute="foo" />
+```
+
+以 aria- 开头的 [网络无障碍] 属性可以正常使用。
+```js
+<div aria-hidden={true} />
+```
+
+###五、疑惑
+
+####1.jsx语法还能用吗?
+
+0.14分离了react 和 react-dom，很多小伙伴错误的以为JSXTransformer.js 就可以不用了?其实并不是不用了。举个例子 一般都使用Webpack打包项目，里面可能会用到一些loader 这其中就有React-loader ，它就替代了JSXTransform的工作。要理解JSX这种语法最终还是要转变为浏览器识别的JS代码。
