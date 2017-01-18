@@ -50,4 +50,30 @@ React.render(myElement, document.body);
 React 的 JSX 里约定分别使用首字母大、小写来区分本地组件的类和 HTML 标签。
 
 注意：由于 JSX 就是 JavaScript，一些标识符像 class 和 for 不建议作为 XML 属性名。作为替代，React DOM 使用 className 和 htmlFor 来做对应的属性。
+
 ####3.转换
+
+JSX 把类 XML 的语法转成纯粹 JavaScript，XML 元素、属性和子节点被转换成 React.createElement 的参数。
+```js
+var Nav;
+// 输入 (JSX):
+var app = <Nav color="blue" />;
+// 输出 (JS):
+var app = React.createElement(Nav, {color:"blue"});
+```
+
+JSX 也支持使用 XML 语法定义子结点：
+```js
+var Nav, Profile;
+// 输入 (JSX):
+var app = <Nav color="blue"><Profile>click</Profile></Nav>;
+// 输出 (JS):
+var app = React.createElement(
+  Nav,
+  {color:"blue"},
+  React.createElement(Profile, null, "click")
+);
+```
+
+注意:
+JSX 表达式总是会当作 ReactElement 执行。具体的实际细节可能不同。一种优化 的模式是把 ReactElement 当作一个行内的对象字面量形式来绕过 React.createElement 里的校验代码。
