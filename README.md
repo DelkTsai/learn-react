@@ -4,4 +4,6 @@
 
 [知识点一：React概述](https://github.com/sosout/learn-react/tree/master/react-summary)
 
-[知识点二：React-JSX 语法](https://github.com/sosout/learn-react/tree/master/react-jsx)
+[知识点二：React-JSX语法](https://github.com/sosout/learn-react/tree/master/react-jsx)
+
+[知识点二：React基本语法](https://github.com/sosout/learn-react/tree/master/react-grammar)
