@@ -80,7 +80,7 @@ JSX 表达式总是会当作 ReactElement 执行。具体的实际细节可能�
 
 ####4.JavaScript 表达式
 
-1.属性表达式
+####1.属性表达式
 
 要使用 JavaScript 表达式作为属性值，只需把这个表达式用一对大括号 ({}) 包起来，不要用引号 ("")。
 ```js
@@ -93,7 +93,7 @@ var person = React.createElement(
 );
 ```
 
-2.子节点表达式 
+####2.子节点表达式 
 
 同样地，JavaScript 表达式可用于描述子结点：
 ```js
@@ -106,7 +106,7 @@ var content = React.createElement(
   window.isLoggedIn ? React.createElement(Nav) : React.createElement(Login)
 );
 ```
-3.注释 
+####3.注释 
 
 JSX 里添加注释很容易；它们只是 JS 表达式而已。你只需要在一个标签的子节点内(非最外层)小心地用 {} 包围要注释的部分。
 ```js
@@ -122,3 +122,12 @@ var content = (
   </Nav>
 );
 ```
+###三、JSX的延展属性
+
+如果你事先知道组件需要的全部 Props（属性），JSX 很容易地这样写：
+```js
+var component = <Component foo={x} bar={y} />;
+```
+####1.修改 Props 是不好的，明白吗?
+
+如果你不知道要设置哪些 Props，那么现在最好不要设置它：
