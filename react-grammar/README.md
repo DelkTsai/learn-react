@@ -2,6 +2,15 @@
 ###重温react.js，并将二次学习成果整理成demo分享给大家
 由于之前忙于赶项目进度，匆匆忙忙没来得及将自己的学习心得分享给大家，趁着过年时间宽松，重温react.js，并将二次学习成果整理成demo分享给大家。
 ##React基本语法
+###React.render()
+ReactDOM.render 是 React 的最基本方法，用于将模板转为 HTML 语言，并插入指定的 DOM 节点。
+```js
+# 将一个 h1 标题，插入 example 节点
+React.render(
+  <h1>Hello, world!</h1>,
+  document.getElementById('example')
+);
+```
 ###React属性和状态详解
 React 中的属性和状态初看之下可以互相替代，但是在 React 的设计哲学中两者有着截然不同的使用方式和使用场景。接下来简单介绍下什么是属性的状态、两者的区别和联系以及如何正确使用属性和状态。
 
