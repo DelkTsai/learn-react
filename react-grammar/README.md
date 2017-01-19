@@ -17,4 +17,16 @@ React 中的属性和状态初看之下可以互相替代，但是在 React 的�
 
 #####(2)属性的用法
 
-<HelloWorld name=?/>
+```js
+
+<HelloWorld name=? /> # 用法一：键值对。值可为字符串，数组，javascript表达式，变量等
+
+var props = {
+  one: "123",
+  two: 321
+};
+<HelloWorld {...props} /> #用法二：延展方式
+
+var instance = React.render(<HelloWorld></HelloWorld>, document.body);
+instance.setProps({name: "Time"}); #用法三：使用setProps,强烈不建议
+```
