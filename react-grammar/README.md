@@ -18,17 +18,24 @@ React 中的属性和状态初看之下可以互相替代，但是在 React 的�
 #####(2)属性的用法
 
 ```js
-# 用法一：键值对。值可为字符串，数组，javascript表达式，变量等
-<HelloWorld name=? /> 
+# 第一种使用方法：键值对
+<ClassName name = "Tom" /> # 字符串
 
-# 用法二：延展方式(...)
+<ClassName name = {Tom} /> # 变量
+
+<ClassName name = {"Tom"} /> # javascript表达式
+
+<ClassName name = {[1,2,3]} /> # 数组
+
+<ClassName name = {FunctionNAme} /> # 定义一个函数
+
+# 第二种方法：三个点的展开对象形式
 var props = {
   one: "123",
   two: 321
 };
-<HelloWorld {...props} /> 
-
-# 用法三：使用setProps,强烈不建议
+<ClassName {...props} />  #增加三个点可以拿到两个属性了（one和two）
+# 第三种方法：setProps形式。通过组件更新属性，不能在组件内部中修改属性的，因为会违背组件设计原则（尽量避免）
 var instance = React.render(<HelloWorld></HelloWorld>, document.body);
-instance.setProps({name: "Time"});
+instance.setProps({name: "Tim"});
 ```
