@@ -2,7 +2,7 @@
 ###重温react.js，并将二次学习成果整理成demo分享给大家
 由于之前忙于赶项目进度，匆匆忙忙没来得及将自己的学习心得分享给大家，趁着过年时间宽松，重温react.js，并将二次学习成果整理成demo分享给大家。
 ##React概述
-![](https://github.com/sosout/learn-react/blob/master/react-summary/q.png)
+Facebook需要解决的问题：构建数据不断变化的大型应用。数据变化会产生大量DOM操作(解决办法：React自动DOM操作)和逻辑极其复杂(解决办法：状态对应内容)。
 ###一、React产生的背景(Facebook)
 1.数据交互繁重的应用编写困难
 
