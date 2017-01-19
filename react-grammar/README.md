@@ -48,6 +48,27 @@ var props = {
 var instance = React.render(<HelloWorld></HelloWorld>, document.body);
 instance.setProps({name: "Tim"});
 ```
+#####(3)默认 Props
+
+你可以通过 getDefaultProps() 方法为 props 设置默认值，实例如下：
+```js
+var HelloMessage = React.createClass({
+  getDefaultProps: function() {
+    return {
+      name: 'Runoob'
+    };
+  },
+  render: function() {
+    return <h1>Hello {this.props.name}</h1>;
+  }
+});
+
+ReactDOM.render(
+  <HelloMessage />,
+  document.getElementById('example')
+);
+```
+
 ####2.React的状态的含义和用法
 
 #####(1)状态的含义
