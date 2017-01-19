@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/react.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/JSXTransformer.js"></script>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script type="text/jsx">
+        var RenderComponent = React.createClass({
+            render: function() {
+                return (
+                    <ul>
+                        {
+                            this.props['data-list'].map(function(item) {
+                                return (<li>{item}</li>)
+                            })
+                        }
+                    </ul>
+                );
+            }
+        });
+
+        var StateComponent = React.createClass({
+            getInitialState: function() {
+                return {list: ['xxx', 'yyy']};
+            },
+            render: function() {
+                return (
+                    <div>
+                        <button onClick={this.handleClick}>click</button>
+                        <RenderComponent data-list={this.state.list} />
+                    </div>
+                )
+            },
+            handleClick: function() {
+                this.setState({list: [1, 2, 3]});
+            }
+        }); 
+
+        React.render(
+            <StateComponent />,
+            document.getElementById('root')
+        );
+    </script>
+</body>
+
+</html>
