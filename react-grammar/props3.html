@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/react.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/JSXTransformer.js"></script>
+</head>
+
+<body>
+    <script type="text/jsx">
+        // 使用setProps,强烈不建议
+        var style = {
+           color: "red",
+           border: "1px #000 solid" 
+        };
+
+        var HelloWorld = React.createClass({
+            render: function() {
+                return <p>Hello, {this.props.name ? this.props.name : 'World'}</p>
+            }
+        });
+
+        var instance = React.render(<HelloWorld style={style}></HelloWorld>, document.body);
+        instance.setProps({name: 'Time'});
+    </script>
+</body>
+
+</html>
