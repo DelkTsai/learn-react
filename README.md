@@ -9,15 +9,16 @@
 [通过 npm 使用 React](https://github.com/sosout/learn-react/tree/master/react-npm)
 
 ##React概述
+React 是一个用于构建用户界面的 JAVASCRIPT 库。
+React主要用于构建UI，很多人认为 React 是 MVC 中的 V（视图）。
+React 起源于 Facebook 的内部项目，用来架设 Instagram 的网站，并于 2013 年 5 月开源。
+React 拥有较高的性能，代码逻辑非常简单，越来越多的人已开始关注和使用它。
+###相关DEMO
 [旧版本：Hello World DEMO](https://github.com/sosout/learn-react/tree/master/react-0.13.3/helloworld.html)
 
 [新版本：Hello World DEMO](https://github.com/sosout/learn-react/tree/master/react-15.4.2/helloworld.html)
 
 [npm: Hello World DEMO](https://github.com/sosout/learn-react/tree/master/react-npm/helloworld.html)
-React 是一个用于构建用户界面的 JAVASCRIPT 库。
-React主要用于构建UI，很多人认为 React 是 MVC 中的 V（视图）。
-React 起源于 Facebook 的内部项目，用来架设 Instagram 的网站，并于 2013 年 5 月开源。
-React 拥有较高的性能，代码逻辑非常简单，越来越多的人已开始关注和使用它。
 ###一、React产生的背景(Facebook)
 Facebook需要解决的问题：构建数据不断变化的大型应用。数据变化会产生大量DOM操作(解决办法：React自动DOM操作)和逻辑极其复杂(解决办法：状态对应内容)。
 
