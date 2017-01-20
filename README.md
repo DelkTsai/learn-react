@@ -73,3 +73,27 @@ React：根据数据声明DOM
 1.UI交互极少的应用
 
 2.需要之前IE8以下版本的浏览器
+
+##React 安装
+React 可以直接下载使用，下载包中也提供了很多学习的实例。我这边旧版的React的版本为0.13.3，新版的版本为15.4.2。
+
+###一、旧版
+旧版中我们引入了三个库： react.js 和 JSXTransformer.js：
+
+1.react.js - React 的核心库
+
+2.JSXTransformer.js - 用于将 JSX 语法转为 JavaScript 语法
+
+如果我们需要使用 JSX，则 <script> 标签的 type 属性需要设置为 text/babel。
+
+###二、新版
+新版中我们引入了三个库： react.js 、react-dom.js 和 browser.min.js：
+
+1.react.js - React 的核心库
+
+2.react-dom.js - 提供与 DOM 相关的功能
+
+3.browser.min.js - 用于将 JSX 语法转为 JavaScript 语法
+
+如果我们需要使用 JSX，则 <script> 标签的 type 属性需要设置为 text/babel。
+
