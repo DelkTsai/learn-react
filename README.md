@@ -84,7 +84,7 @@ React 可以直接下载使用，下载包中也提供了很多学习的实例�
 
 2.JSXTransformer.js - 用于将 JSX 语法转为 JavaScript 语法
 
-如果我们需要使用 JSX，则 <script> 标签的 type 属性需要设置为 text/babel。
+如果我们需要使用 JSX，则 &lt;script&gt; 标签的 type 属性需要设置为 text/babel。
 
 ###二、新版
 新版中我们引入了三个库： react.js 、react-dom.js 和 browser.min.js：
@@ -95,5 +95,8 @@ React 可以直接下载使用，下载包中也提供了很多学习的实例�
 
 3.browser.min.js - 用于将 JSX 语法转为 JavaScript 语法
 
-如果我们需要使用 JSX，则 <script> 标签的 type 属性需要设置为 text/babel。
+如果我们需要使用 JSX，则 &lt;script&gt; 标签的 type 属性需要设置为 text/babel。
+
+###三、通过 npm 使用 React
+建议在 React 中使用 CommonJS 模块系统，比如 browserify 或 webpack，本教程使用 webpack。
 
