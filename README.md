@@ -98,5 +98,58 @@ React 可以直接下载使用，下载包中也提供了很多学习的实例�
 如果我们需要使用 JSX，则 &lt;script&gt; 标签的 type 属性需要设置为 text/babel。
 
 ###三、通过 npm 使用 React
-建议在 React 中使用 CommonJS 模块系统，比如 browserify 或 webpack，本教程使用 webpack。
+建议在 React 中使用 CommonJS 模块系统，比如 browserify 或 webpack，我这边使用的 webpack。
+
+1.创建一个项目目录，比如我这边为react-npm，再使用npm init初始化，生成package.json文件：
+```js
+# 将一个 h1 标题，插入 example 节点
+mkdir react-npm
+cd react-npm
+npm init
+name: (react-npm) react-npm
+version: (1.0.0) 
+description: 
+entry point: (index.js) 
+test command: 
+git repository: 
+keywords: 
+author: 
+license: (ISC) 
+......
+
+Is this ok? (yes)
+```
+
+2.添加依赖包及插件
+
+(1)全局包
+```js
+npm install babel -g
+npm install webpack -g
+```
+(2)依赖包
+
+因为我们要使用 React, 所以我们需要先安装它，--save 命令用于将包添加至 package.json 文件。
+
+```js
+npm install react --save
+npm install react-dom --save
+```
+
+(3)插件
+
+同时我们也要安装一些 babel 插件
+
+```js
+npm install babel-core
+npm install babel-loader
+npm install babel-preset-react
+npm install babel-preset-es2015
+```
+
+3.创建文件
+
+接下来我们创建一些必要文件：index.html、App.jsx、main.js、webpack.config.js
+
+4、编辑
 
