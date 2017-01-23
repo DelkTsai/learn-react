@@ -555,4 +555,11 @@ Redux是Flux框架的一种实现方法。
 
 流程：页面渲染完成，UI展现出来了。用户触发(trigger)页面上的Actions,然后Actions被传递到一个Reducer方法中，Reducer更新Store的数据即state
 
+###四、react-redux安装与资料获取
+
+####1.安装：npm install react-redux redux --save-dev
+
+####2.资料： 英文http://redux.js.org/ 中文http://cn.redux.js.org/
+
+
 
