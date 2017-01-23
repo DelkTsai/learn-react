@@ -538,13 +538,13 @@ React是纯V层框架，需要数据流进行支撑。
 
 用户一个Action作用在Controller分发到各个Model
 
-![](https://github.com/sosout/learn-react/2017012301.png)
+![](https://github.com/sosout/learn-react/blob/master/2017012301.png)
 
 
 ####2.Flux(单向数据流)
 
 All Action 由同一个Dispatcher分发到若个store(保存着数据和页面的状态)，一个store只能向后向页面传递信息，而不允许view层再返回过来作用在store上
 
-![](https://github.com/sosout/learn-react/2017012302.png)
+![](https://github.com/sosout/learn-react/blob/master/2017012302.png)
 
 
