@@ -561,5 +561,7 @@ Redux是Flux框架的一种实现方法。
 
 ####2.资料： 英文http://redux.js.org/ 中文http://cn.redux.js.org/
 
+![](https://github.com/sosout/learn-react/blob/master/2017012304.png)
+
 
 
