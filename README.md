@@ -536,15 +536,23 @@ React是纯V层框架，需要数据流进行支撑。
 
 ####1.MVC
 
-用户一个Action作用在Controller分发到各个Model
-
 ![](https://github.com/sosout/learn-react/blob/master/2017012301.png)
+
+流程：用户一个Action作用在Controller，Controller分发到各个Model，Model层向view层传递信息，同时view层再返回过来作用在Model上
 
 
 ####2.Flux(单向数据流)
 
-All Action 由同一个Dispatcher分发到若个store(保存着数据和页面的状态)，一个store只能向后向页面传递信息，而不允许view层再返回过来作用在store上
-
 ![](https://github.com/sosout/learn-react/blob/master/2017012302.png)
+
+流程：All Action 由同一个Dispatcher分发到若个store(保存着数据和页面的状态)，一个store只能向后向页面传递信息，而不允许view层再返回过来作用在store上
+
+###三、Redux概述
+
+Redux是Flux框架的一种实现方法。
+
+![](https://github.com/sosout/learn-react/blob/master/2017012303.png)
+
+流程：页面渲染完成，UI展现出来了。用户触发(trigger)页面上的Actions,然后Actions被传递到一个Reducer方法中，Reducer更新Store的数据即state
 
 
