@@ -514,6 +514,37 @@ ReactDOM.render(
 
 0.14分离了react 和 react-dom，很多小伙伴错误的以为JSXTransformer.js 就可以不用了?其实并不是不用了。举个例子 一般都使用Webpack打包项目，里面可能会用到一些loader 这其中就有React-loader ，它就替代了JSXTransform的工作。要理解JSX这种语法最终还是要转变为浏览器识别的JS代码。
 
+##React 组件
 
+##在React中使用Redux数据流
+
+###一、问题
+
+####1.数据流是什么？
+
+数据流是我们的行为与响应的抽象。
+
+####2.为什么要用数据流？
+
+使用数据流帮助我们明确了行为对应的响应。
+
+####3.React与数据流的关系
+
+React是纯V层框架，需要数据流进行支撑。
+
+###二、单向数据流
+
+####1.MVC
+
+用户一个Action作用在Controller分发到各个Model
+
+![](https://github.com/sosout/learn-react/2017012301.png)
+
+
+####2.Flux(单向数据流)
+
+All Action 由同一个Dispatcher分发到若个store(保存着数据和页面的状态)，一个store只能向后向页面传递信息，而不允许view层再返回过来作用在store上
+
+![](https://github.com/sosout/learn-react/2017012302.png)
 
 

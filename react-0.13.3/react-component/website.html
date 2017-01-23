@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/react.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/JSXTransformer.js"></script>
+</head>
+<body>
+	<div id="example"></div>
+	<script type="text/jsx">
+		var WebSite = React.createClass({
+			render: function() {
+				return (
+					<div>
+						<Name name={this.props.name} />
+						<Link site={this.props.site} />
+					</div>
+				);
+			}
+		});
+
+		var Name = React.createClass({
+			render: function() {
+				return (
+					<h1>{this.props.name}</h1>
+				);
+			}
+		});
+
+		var Link = React.createClass({
+			render: function() {
+				return (
+					<a href={this.props.site}>
+						{this.props.site}
+					</a>
+				);
+			}
+		});
+
+		React.render(<WebSite name="个人博客" site="http://www.sosout.com" />, document.getElementById('example'));
+	</script>
+</body>
+</html>

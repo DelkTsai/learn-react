@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react-dom.js"></script>
+    <script src="http://static.runoob.com/assets/react/browser.min.js"></script>
+</head>
+<body>
+	<div id="example"></div>
+	<script type="text/babel">
+		var HelloMessage = React.createClass({
+			render: function() {
+				return <h1>Hello World!</h1>
+			}
+		});
+
+		ReactDOM.render(<HelloMessage />, document.getElementById('example'));
+	</script>
+</body>
+</html>
