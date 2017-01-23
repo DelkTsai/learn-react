@@ -615,5 +615,13 @@ const todo = (state, action) => {
 
 (4)：返回新状态
 
+####3.store
+
+![](https://github.com/sosout/learn-react/blob/master/2017012305.png)
+
+####4.组件
+
+![](https://github.com/sosout/learn-react/blob/master/2017012306.png)
+
 
 
