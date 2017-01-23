@@ -563,5 +563,57 @@ Redux是Flux框架的一种实现方法。
 
 ![](https://github.com/sosout/learn-react/blob/master/2017012304.png)
 
+###五、action和reducer
+
+####1.action
+```js
+const addTodo = (text) => {
+  return {
+    type: 'ADD_TODO',
+    id: nextTodoId++,
+    text
+  }
+}
+```
+
+(1)：是行为的抽象
+
+(2)：是普通JS对象
+
+(3)：一般由方法生成
+
+(4)：必须有一个type
+
+####2.reducer
+```js
+const todo = (state, action) => {
+  switch (action.type) {
+    case: 'ADD_TODO':
+      return {
+        id: action.id,
+        text: action.text,
+        completed: false
+      }
+    case: 'TOGGLE_TODO':
+      if(state.id !== action.id) {
+        return state;
+      }
+      return Object.assign({}, state, {
+        completed: !state.completed
+      })
+    default:
+      return state;
+  }
+}
+```
+
+(1)：是响应的抽象
+
+(2)：是纯方法
+
+(3)：传入旧状态和action
+
+(4)：返回新状态
+
 
 
